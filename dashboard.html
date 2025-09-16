@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SIAS - Dashboard</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>SIAS</h1>
+    <div id="nav"></div>
+    <button id="logoutBtn">Logout</button>
+  </header>
+  <main id="app" style="padding:16px"></main>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    // configure webapp url here (or in app.js)
+    window.SIAS_WEBAPP = 'https://script.google.com/macros/s/AKfycbwBTTJVdhJvFDG3r45gw2IepHtH30-B5kCUpe5S96OKIADdUgUJSQ9A1HGhdi0LU-tP/exec';
+    initApp();
+  </script>
+</body>
+</html>

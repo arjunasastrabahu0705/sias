@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SIAS - Login</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <main class="login-box">
+    <h1>SIAS Login</h1>
+    <form id="loginForm">
+      <label>Username<input name="username" required></label>
+      <label>Password<input name="password" type="password" required></label>
+      <button type="submit">Login</button>
+    </form>
+    <div id="msg" style="color:red;margin-top:8px"></div>
+  </main>
+
+  <script src="assets/js/api.js"></script>
+  <script>
+    // GANTI DENGAN WEBAPP URL APPS SCRIPT ANDA
+    const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwBTTJVdhJvFDG3r45gw2IepHtH30-B5kCUpe5S96OKIADdUgUJSQ9A1HGhdi0LU-tP/exec';
+
+    document.getElementById('loginForm').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const f = e.target;
+      const payload = { action: 'login', username: f.username.value, password: f.password.value };
+      const res = await apiPost(WEBAPP_URL, payload);
+      if (res && res.ok) {
+        sessionStorage.setItem('token', res.token);
+        sessionStorage.setItem('user', JSON.stringify(res.user));
+        window.location.href = 'dashboard.html';
+      } else {
+        document.getElementById('msg').innerText = res.error || 'Login failed';
+      }
+    });
+  </script>
+</body>
+</html>
