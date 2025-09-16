@@ -1,0 +1,9 @@
+body{font-family:Arial,Helvetica,sans-serif;margin:0}
+header{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px;background:#0b5;color:#fff}
+.login-box{max-width:420px;margin:60px auto;padding:16px;border-radius:8px;border:1px solid #ddd}
+label{display:block;margin:6px 0}
+input,select{padding:6px;margin-top:4px;width:100%}
+button{padding:8px 10px;margin:6px 0}
+table{border-collapse:collapse}
+th,td{padding:6px;border:1px solid #ccc}
+pre{white-space:pre-wrap}
